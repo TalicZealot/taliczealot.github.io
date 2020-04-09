@@ -1,0 +1,4 @@
+[submodule "pathfinding"]
+	path = pathfinding
+	url = https://github.com/TalicZealot/SotN-Pathfinding
+        branch = master
