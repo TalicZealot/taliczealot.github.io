@@ -4,7 +4,7 @@ layout: default
 
 ## My projects:
 
-*   [SotN Pathfinding](/pathfinding/index.html)
+*   [SotN Pathfinding](/pathfinding/)
 *   SotN Relic Tracker
 *   SotN Trial Mode
 
