@@ -266,9 +266,8 @@ article div {
     color: var(--playstation-grey-dark);
 }
 
-.ps-triangle {
-    font-size: 1.3em;
+.ps-circle {
     font-weight: bolder;
     -webkit-text-stroke: 0.02em black;
-    color: var(--playstation-triangle);
+    color: var(--playstation-circle);
 }
