@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="khaos-widget" content="width=device-width, initial-scale=1.0">
+    <title>Khaos Actions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <nav id="main-nav" class="nav-menu">
+            <a class="khaos-logo" href="https://taliczealot.github.io/"></a>
+            <a class="main-link" href="">Setup</a>
+            <span class="menu-divider">|</span>
+            <a class="main-link" href="../coop/">Co-Op</a>
+            <a class="main-link" href="../tracker/">Tracker</a>
+        </nav>
+    </header>
+    <div>
+        <nav id="khaos-menu" class="nav-menu">
+            <div id="button-actions-khaotic" class="actions-button">
+                <img src="IconEye.png" alt="" width="32" height="32">
+                <span>Khaotic</span>
+            </div>
+            <div id="button-actions-debuffs" class="actions-button">
+                <img src="IconSkull.png" alt="" width="32" height="32">
+                <span>Debuffs</span>
+            </div>
+            <div id="button-actions-buffs" class="actions-button">
+                <img src="IconFairy.png" alt="" width="32" height="32">
+                <span>Buffs</span>
+            </div>
+        </nav>
+        <div id="khaos-actions-khaotic" class="actions-list">
+            <div class="action">
+                <div>
+                    <div class="action-title">Khaos Status</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!kstatus</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Inflicts a randoms tatus effect between Poison, Curse or Stone. This effect can be avoided with invincibility or immunity.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Khaos Equipment</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!kequipment</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Randomizes Alucard's equipped gear. If the player has a progression item it gets given back to them and put in the inventory.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Khaos Stats</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!kstats</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Randomizes Alucard's stats, HP and Mana.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Khaos Relics</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!krelics</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Randomizes Alucard's relics. It cannot give Alucard Vlad relics, but has a chance of taking them away.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Pandora's Box</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!pandora</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Randomizes relics, stats, gold, eqipment and inventory and respawns bosses. Cannot give vlad relics. Gives back progression items.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Gamble</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!gamble</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Gambles away a percentage of Alucard's gold for a completely random item.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="khaos-actions-debuffs" class="actions-list hidden">
+            <div class="action">
+                <div>
+                    <div class="action-title">Bankrupt</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!bankrupt</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Alucard loses all gold, equipment and inventory. If the player has a progression item it gets given back to them and put in the inventory.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Weaken</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!weaken</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Alucard's level, stats, hp and mana get halved. Experience is adjusted so that the player can regain their stats.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Respawn Bosses</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!respawnbosses</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        All the defeated bosses in the game rise back to life. Boss zone needs to be reloaded for boss to appear.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Honest Gamer</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!honest</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        The honorable SotN players don't abuse spells. Mana locked to 2 for a period.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Subweapons Only</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!subsonly</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Can only use subweapons for combat for a period. Alucard is cursed and mana is locked to 0. Gives Alucard Cube of Zoe, a subweapon and 200 hearts.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Cripple</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!cripple</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Not so fast! Alucard is slowed for a period. Affects walk speed, backdash deceleration, wingsmash speed.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Blood Mana</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!bloodmana</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Spells now cost HP instead of mana. If hp gets low spells start taking from the mana pool. Can't' kill the player.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Thirst</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!thirst</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Alucard's vampire nature makes him thirst for blood! Alucard gets Dark Metamorphasis effect, but loses hp over time for a period.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Horde</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!horde</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Khaos has awakened! The castle begins to cintinuously spawn annoying enemies. Triggers after a viable weaker enemy is encountered in the area.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Endurance</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!endurance</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Test your might versus the next boss, who spawns a clone of themselves. Waits for the next boss, so it will not activate in the current room if it has a boss. Does nto apply to Beelzebub, Galamoth and Dracula.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="khaos-actions-buffs" class="actions-list hidden">
+            <div class="action">
+                <div>
+                    <div class="action-title">Vampire</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!vampire</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Alucard gets Dark Metamorphasis and an atack bonus for an extended period.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Light Help</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!lighthelp</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Activates a Potion, Shield Potion or gives Alucard a minor item.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Medium Help</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!mediumhelp</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Activates an Elixir, Manna Prism or gives Alucard a decent item.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Heavy Help</div>
+                    <div class="action-activation" data-tooltip="The action happens immediately.">
+                        <span>!heavyhelp</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Gives Alucard a top-tier item or a non-Vlad progression relic.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Battle Orders</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!battleorders</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        A glorious warcry echoes, Alucard's HP get's doubled temporarily, mana is refilled, activates a Shield Potion.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Magician</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!magician</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Mana is locked to max for a period. Activates an Int Potion.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Melty Blood</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!melty</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        The hitboxes of most of Alucard's non-special attacks become S+ tier for a period.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Four Beasts</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!fourbeasts</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        For a period Alucard becomes fully invincible and has an attack buff.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Za Warudo</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!zawarudo</span>
+                        <img src="Spark.png" width="16" height="16" alt="">
+                        <span>instant</span>
+                    </div>
+                    <p class="action-description">
+                        Time has stopped! Feel free to throw a road roller at your enemies.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="action">
+                <div>
+                    <div class="action-title">Haste</div>
+                    <div class="action-activation" data-tooltip="The action gets put in a queue and will get executed after the others.">
+                        <span>!haste</span>
+                        <img src="Stopwatch.png" width="16" height="16" alt="">
+                        <span>queued</span>
+                    </div>
+                    <p class="action-description">
+                        Increase movement speed for a period. Affects walk speed and wingsmash speed.
+                    </p>
+                </div>
+                <div>
+                    <iframe class="youtube" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=0&amp;wmode=transparent&amp;start=0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./actions.js"></script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="khaos-widget" content="width=device-width, initial-scale=1.0">
+    <title>SotN Rando Tools Autotracker</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <nav id="main-nav" class="nav-menu">
+            <a class="khaos-logo" href="https://taliczealot.github.io/"></a>
+            <a class="main-link" href="../coop/">Co-Op</a>
+            <a class="main-link" href="../khaos/">Khaos</a>
+        </nav>
+    </header>
+    <div class="panel-main">
+        <article>
+            <div>
+                <div class="article-title">Seed and Preset Tracking</div>
+                <p class="action-description">
+                    The tracker detects the seed name and preset in the main menu. The preset determines what the progression relics are and if the tracker will display equipment locations.
+                </p>
+                <div class="article-title">Relic and Item Tracking</div>
+                <p class="action-description">
+                    Collected relics or progression items will either appear on the tracker or become colored depending on the tracker settings.
+                </p>
+            </div>
+            <div>
+                <img src="Tracker.png" alt="">
+            </div>
+        </article>
+        <article>
+            <div>
+                <div class="article-title">Location tracking</div>
+                <p class="action-description">
+                    Unchecked locations are displayed on the in-game map. The colors indicate if the location is reachable and if reaching it is in-logic or an allowed out-of-logic check. If a location does not disappear from the map after being checked that is a bug, please
+                    report it <a class="small-link" href="https://github.com/TalicZealot/SotnRandoTools/issues/new?assignees=TalicZealot&labels=bug&template=bug_report.md&title=">here</a>.
+                </p>
+                <div>
+                    <span class="location-unavailable"></span>
+                    <span>unavailable</span>
+                </div>
+                <div>
+                    <span class="location-available"></span>
+                    <span>available</span>
+                </div>
+                <div>
+                    <span class="location-allowed"></span>
+                    <span>allowed</span>
+                </div>
+            </div>
+            <div>
+                <img src="TrackerMap.png" alt="">
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>

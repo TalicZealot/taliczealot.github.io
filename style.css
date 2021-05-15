@@ -1,0 +1,274 @@
+:root {
+    --grey-darkest: #141517;
+    --grey-dark: #242629;
+    --grey-medium: #2b2c30;
+    --grey-light: #32353b;
+    --pastel-green: #15e0a7;
+    --pastel-blue: #776bff;
+    --pastel-orange: #f2a20c;
+    --off-white: rgb(241, 237, 237);
+    --dirty-white: rgb(145, 145, 145);
+    --location-border: #c0c0c0;
+    --location-grey: #909090;
+    --location-green: #00f800;
+    --location-purple: #c000c0;
+    --playstation-square: #f89898;
+    --playstation-circle: #f84040;
+    --playstation-cross: #80b8f8;
+    --playstation-triangle: #50f850;
+    --playstation-grey-light: #b0afb2;
+    --playstation-grey-dark: #414143;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Roobert, Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.5;
+    color: var(--off-white);
+    background-color: var(--grey-light);
+    text-align: center;
+}
+
+* {
+    font-family: Roobert, Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 1.5;
+    color: var(--off-white);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+img {
+    image-rendering: crisp-edges;
+}
+
+.khaos-logo {
+    background-image: url('KhaosLogo.png');
+    width: 38px;
+    height: 45px;
+    margin-right: 0.4em;
+}
+
+header {
+    padding: 0.2em;
+    background-color: var(--grey-darkest);
+}
+
+footer {
+    background-color: var(--grey-darkest);
+}
+
+#main-nav {
+    font-size: 1em !important;
+    font-weight: 600 !important;
+    color: var(--off-white);
+    display: flex;
+    align-items: center;
+}
+
+.main-link {
+    vertical-align: middle;
+    width: 6%;
+    min-width: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+#main-nav a:hover {
+    color: var(--pastel-blue);
+}
+
+.menu-divider {
+    cursor: default;
+    font-size: 1em !important;
+    font-weight: 300 !important;
+    color: var(--dirty-white);
+}
+
+#khaos-menu {
+    margin: auto;
+    background-color: var(--grey-dark);
+    margin-bottom: 1em;
+    gap: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.actions-button {
+    cursor: pointer;
+    padding: 0.3em;
+    display: flex;
+    width: 8%;
+    min-width: 130px;
+    justify-content: center;
+}
+
+.actions-button:hover {
+    background-color: var(--grey-medium);
+}
+
+.actions-button span {
+    color: var(--pastel-green);
+}
+
+.panel-main {
+    display: flex;
+    padding: 0.6em;
+    gap: 0.6em;
+    flex-wrap: wrap;
+}
+
+.actions-list {
+    display: flex;
+    padding: 0.6em;
+    gap: 0.6em;
+    flex-wrap: wrap;
+}
+
+.action {
+    margin: auto;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: var(--grey-dark);
+    display: inline-flex;
+    text-align: left;
+    width: 50%;
+    min-width: 500px;
+    max-width: 700px;
+    flex: 1 1 30%;
+}
+
+.action-title {
+    color: var(--pastel-blue);
+}
+
+.action-activation {
+    display: inline-flex;
+    justify-content: center;
+    padding: 0 0.5em;
+    border-radius: 10px;
+    background-color: var(--grey-medium);
+    cursor: pointer;
+}
+
+.action-activation:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    margin-left: 100px;
+    width: 200px;
+    padding: 1em;
+    border-radius: 10px;
+    background: var(--grey-darkest);
+    font-weight: normal;
+    font-size: 0.7em;
+    display: none;
+}
+
+.action-activation:hover:after {
+    display: inline-flex;
+}
+
+.action-activation img {
+    margin: auto;
+    margin-right: 0.2em;
+    margin-left: 1em;
+}
+
+.action-activation span {
+    color: var(--pastel-orange);
+}
+
+.action-description {
+    padding: 0.3em 0.3em 0.3em 0;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.youtube {
+    border-radius: 10px;
+    width: 280px;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.small-link {
+    color: var(--pastel-blue);
+}
+
+.small-link:hover {
+    color: var(--pastel-orange);
+}
+
+article {
+    margin: auto;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: var(--grey-dark);
+    display: flex;
+    text-align: left;
+    width: 60%;
+    min-width: 800px;
+    max-width: 1000px;
+}
+
+article div {
+    flex-grow: 1;
+}
+
+.location-unavailable {
+    background-color: var(--location-grey);
+    width: 20px;
+    height: 20px;
+    border: solid var(--location-border) 4px;
+    display: inline-block;
+}
+
+.location-available {
+    background-color: var(--location-green);
+    width: 20px;
+    height: 20px;
+    border: solid var(--location-border) 4px;
+    display: inline-block;
+}
+
+.location-allowed {
+    background-color: var(--location-purple);
+    width: 20px;
+    height: 20px;
+    border: solid var(--location-border) 4px;
+    display: inline-block;
+}
+
+.article-title {
+    color: var(--pastel-blue);
+}
+
+.ps {
+    border-radius: 10px;
+    padding: 0.1em 0.2em 0.1em 0.2em;
+    background-color: var(--playstation-grey-light);
+}
+
+.ps-select {
+    color: var(--playstation-grey-dark);
+}
+
+.ps-triangle {
+    font-size: 1.3em;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.02em black;
+    color: var(--playstation-triangle);
+}
