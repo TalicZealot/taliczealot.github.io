@@ -196,7 +196,8 @@ footer {
 
 .youtube {
     border-radius: 10px;
-    width: 280px;
+    width: 270px;
+    height: 228px;
     overflow: hidden;
 }
 
