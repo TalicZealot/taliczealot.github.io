@@ -3,4 +3,4 @@
 	url = https://github.com/TalicZealot/SotN-Pathfinding
 [submodule "replays"]
 	path = replays
-	url = https://github.com/TalicZealot/SotN-Replay-Player
+	url = https://github.com/TalicZealot/SotN-Replay-Player.git
