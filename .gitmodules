@@ -1,3 +1,6 @@
 [submodule "pathfinding"]
 	path = pathfinding
 	url = https://github.com/TalicZealot/SotN-Pathfinding
+[submodule "replays"]
+	path = replays
+	url = https://github.com/TalicZealot/SotN-Replay-Player
