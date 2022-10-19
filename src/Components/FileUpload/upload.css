@@ -1,0 +1,111 @@
+:root {
+  --text-green: #51d7c1;
+  --text-error: #ff0033;
+  --plr-grey: #242629;
+  --plr-lgrey: #3c3d42;
+  --plr-dgrey: #141517;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--plr-grey);
+    width: 70vw;
+    height: 80vh;
+    justify-content: center;
+    position: relative;
+    line-height: 3
+  }
+  
+  .upload {
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: none;
+    text-transform: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+  
+  .upload:focus {
+    outline: none;
+  }
+
+  
+  .upload-text {
+    font-weight: bold;
+    letter-spacing: 2.2px;
+    text-align: center;
+  }
+
+  .upload-error {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 2.2px;
+    text-align: center;
+    color: var(--text-error);
+  }
+  
+  .upload-button {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid var(--plr-lgrey);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1.1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-green);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    transition: color 250ms ease-in-out;
+    font-family: "Open Sans", sans-serif;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .upload-button:disabled {
+    opacity: 0.4;
+    filter: grayscale(100%);
+    pointer-events: none;
+  }
+  
+  .upload-button:focus {
+    outline: 0;
+    background: transparent;
+  }
+  
+  .upload-button:hover {
+    color: #fff;
+    outline: 0;
+    background: transparent;
+  }
+  
+  .upload-button:hover::after {
+    opacity: 1;
+  }
+  
+  .upload-button:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--plr-lgrey);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
