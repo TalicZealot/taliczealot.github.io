@@ -15,7 +15,7 @@
     height: 80vh;
     justify-content: center;
     position: relative;
-    line-height: 3
+    line-height: 3;
   }
   
   .upload {
@@ -66,7 +66,6 @@
     color: var(--text-green);
     position: relative;
     overflow: hidden;
-    z-index: 2;
     transition: color 250ms ease-in-out;
     font-family: "Open Sans", sans-serif;
     width: 45%;

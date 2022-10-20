@@ -43,20 +43,20 @@ function Tracker({ relics, seed, username, playerIndex }) {
             </div>
             <div>
                 <img className={"relic " + (relics[24] ? "" : "uncollected")} src="../images/NoseDevilCard.png" alt="NoseDevilCard" id="NoseDevilCard" />
-                <img className={"relic " + (relics[25] ? "" : "uncollected")} src="../images/Claymore.png" alt="ThrustSword" id="ThrustSword" />
+                <img className={"relic " + (relics[34] ? "" : "uncollected")} src="../images/Claymore.png" alt="ThrustSword" id="ThrustSword" />
             </div>
             <div>
-                <img className={"relic " + (relics[26] ? "" : "uncollected")} src="../images/HeartOfVlad.png" alt="HeartOfVlad" id="HeartOfVlad" />
-                <img className={"relic " + (relics[27] ? "" : "uncollected")} src="../images/ToothOfVlad.png" alt="ToothOfVlad" id="ToothOfVlad" />
-                <img className={"relic " + (relics[28] ? "" : "uncollected")} src="../images/RibOfVlad.png" alt="RibOfVlad" id="RibOfVlad" />
-                <img className={"relic " + (relics[29] ? "" : "uncollected")} src="../images/RingOfVlad.png" alt="RingOfVlad" id="RingOfVlad" />
-                <img className={"relic " + (relics[30] ? "" : "uncollected")} src="../images/EyeOfVlad.png" alt="EyeOfVlad" id="EyeOfVlad" />
+                <img className={"relic " + (relics[25] ? "" : "uncollected")} src="../images/HeartOfVlad.png" alt="HeartOfVlad" id="HeartOfVlad" />
+                <img className={"relic " + (relics[26] ? "" : "uncollected")} src="../images/ToothOfVlad.png" alt="ToothOfVlad" id="ToothOfVlad" />
+                <img className={"relic " + (relics[27] ? "" : "uncollected")} src="../images/RibOfVlad.png" alt="RibOfVlad" id="RibOfVlad" />
+                <img className={"relic " + (relics[28] ? "" : "uncollected")} src="../images/RingOfVlad.png" alt="RingOfVlad" id="RingOfVlad" />
+                <img className={"relic " + (relics[29] ? "" : "uncollected")} src="../images/EyeOfVlad.png" alt="EyeOfVlad" id="EyeOfVlad" />
             </div>
             <div>
-                <img className={"relic " + (relics[31] ? "" : "uncollected")} src="../images/GoldRing.png" alt="GoldRing" id="GoldRing" />
-                <img className={"relic " + (relics[32] ? "" : "uncollected")} src="../images/SilverRing.png" alt="SilverRing" id="SilverRing" />
-                <img className={"relic " + (relics[33] ? "" : "uncollected")} src="../images/SpikeBreaker.png" alt="SpikeBreaker" id="SpikeBreaker" />
-                <img className={"relic " + (relics[34] ? "" : "uncollected")} src="../images/HolyGlasses.png" alt="HolyGlasses" id="HolyGlasses" />
+                <img className={"relic " + (relics[30] ? "" : "uncollected")} src="../images/GoldRing.png" alt="GoldRing" id="GoldRing" />
+                <img className={"relic " + (relics[31] ? "" : "uncollected")} src="../images/SilverRing.png" alt="SilverRing" id="SilverRing" />
+                <img className={"relic " + (relics[32] ? "" : "uncollected")} src="../images/SpikeBreaker.png" alt="SpikeBreaker" id="SpikeBreaker" />
+                <img className={"relic " + (relics[33] ? "" : "uncollected")} src="../images/HolyGlasses.png" alt="HolyGlasses" id="HolyGlasses" />
             </div>
         </div>
     )

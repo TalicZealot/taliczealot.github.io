@@ -72,7 +72,8 @@ function getReplay(data, name) {
         relics.push({
             x: x,
             y: y,
-            index: index
+            index: index,
+            set: false
         });
     }
 
@@ -87,7 +88,8 @@ function getReplay(data, name) {
         items.push({
             x: x,
             y: y,
-            index: index
+            index: index,
+            set: false
         });
     }
 
@@ -106,14 +108,16 @@ function getReplay(data, name) {
         }
         
         relics.forEach(relic => {
-            if (relic.index === stateIndex) {
+            if (!relic.set && relic.index === stateIndex) {
                 relic.index = frames.length;
+                relic.set = true;
             }
         });
 
         items.forEach(item => {
-            if (item.index === stateIndex) {
+            if (!item.set && item.index === stateIndex) {
                 item.index = frames.length;
+                item.set = true;
             }
         });
 
