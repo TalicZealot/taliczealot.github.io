@@ -27,14 +27,18 @@ let relicImages = [
     '../images/FaerieScroll.png',
     '../images/JewelOfOpen.png',
     '../images/MermanStatue.png',
+    '../images/BatCard.png',
+    '../images/GhostCard.png',
     '../images/FaerieCard.png',
     '../images/DemonCard.png',
+    '../images/SwordCard.png',
     '../images/SpriteCard.png',
     '../images/NoseDevilCard.png',
     '../images/HeartOfVlad.png',
     '../images/ToothOfVlad.png',
     '../images/RibOfVlad.png',
     '../images/RingOfVlad.png',
+    '../images/EyeOfVlad.png',
     '../images/GoldRing.png',
     '../images/SilverRing.png',
     '../images/SpikeBreaker.png',
@@ -85,7 +89,7 @@ function initializePlayers(replays) {
     let players = [];
     replays.forEach(replay => {
         let combinedSet = replay.relics;
-        combinedSet.concat(replay.items);
+        combinedSet = combinedSet.concat(replay.items);
         let player = {
             username: replay.username,
             seed: replay.seed,
@@ -98,7 +102,7 @@ function initializePlayers(replays) {
             trailIndex: 0,
             replay: replay.frames,
             replaySvgData: replay.svgPathData,
-            relics: Array(29).fill(false),
+            relics: Array(35).fill(false),
             relicTimes: combinedSet
         };
         if (player.username === "") {
@@ -132,11 +136,11 @@ function getMaxTime(replays) {
 
 function getRelicCoordinates(replays) {
     let combinedSet = replays[0].relics;
-    combinedSet.concat(replays[0].items);
+    combinedSet = combinedSet.concat(replays[0].items);
 
     for (let i = 1; i < replays.length; i++) {
         let nextSet = replays[i].relics;
-        nextSet.concat(replays[i].items);
+        nextSet = nextSet.concat(replays[i].items);
 
         for (let j = 0; j < combinedSet.length; j++) {
             if (combinedSet[j].x == 0) {
@@ -158,8 +162,8 @@ function Player({ replays }) {
     const [playbackSpeed, setPlaybackSpeed] = useState(1);
     const [progress, setProgress] = useState(1);
     const [animationIndex, setAnimationIndex] = useState(0);
-    const [castle, setCastle] = useState(1);
     const [oldIndex, setOldIndex] = useState(0);
+    const [castle, setCastle] = useState(1);
     const [longestReplay, setLongestReplay] = useState(0);
     const [totalTime, setTotalTime] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -167,7 +171,7 @@ function Player({ replays }) {
     const [seekActive, setSeekActive] = useState(false);
     const [focusPlayerIndex, setFocusPlayerIndex] = useState(0);
     const [secondaryPlayerIndex, setSecondaryPlayerIndex] = useState(1);
-    const [relicCoordinates, setRelicCoordinates] = useState(Array(31).fill({ x: -20, y: -20 }));
+    const [relicCoordinates, setRelicCoordinates] = useState(Array(35).fill({ x: -20, y: -20 }));
 
     const width = 904;
     const height = 1414;
@@ -176,6 +180,7 @@ function Player({ replays }) {
     const indicatorStrokeWidth = 2;
     const trailStrokeWidth = 4;
     const trailOpacity = 1;
+    const debug = false;
 
     const animation = () => {
 
@@ -277,6 +282,7 @@ function Player({ replays }) {
             player.trailIndex = 0;
             player.indicator.x = startingX;
             player.indicator.y = startingY;
+            player.relics = Array(35).fill(false);
         });
         setPlayers(tempPlayers);
         setPlaying(false);
@@ -292,12 +298,18 @@ function Player({ replays }) {
         let tempPlayers = players;
         tempPlayers.forEach(player => {
             player.trailIndex = newIndex;
+            player.relics = Array(35).fill(false);
         });
         setOldIndex(newIndex - 1);
         setPlayers(tempPlayers);
         setAnimationIndex(newIndex);
         setSeekActive(false);
     };
+
+    const showDebugData = () => {
+        console.log("animationIndex: " + animationIndex);
+        console.log(replays);
+    }
 
     const selectPlayer = (index) => {
         if (index === secondaryPlayerIndex) {
@@ -408,6 +420,11 @@ function Player({ replays }) {
                             null
                         }
                     </div>
+                    {debug ?
+                    <div className="player-button" onClick={showDebugData}>DBG</div>
+                    :
+                    null
+                    }
                     <div className="replay-time">{getTimeString(currentTime) + " / " + getTimeString(totalTime)}</div>
                 </div>
             </div>
@@ -421,7 +438,7 @@ function Player({ replays }) {
                     ))}
                 </div>
                 <Tracker
-                    relics={players[focusPlayerIndex] ? players[focusPlayerIndex].relics : Array(29).fill(false)}
+                    relics={players[focusPlayerIndex] ? players[focusPlayerIndex].relics : Array(35).fill(false)}
                     seed={players[focusPlayerIndex] ? players[focusPlayerIndex].seed : "seed(preset)"}
                     username={players[focusPlayerIndex] ? players[focusPlayerIndex].username : "Player"}
                     playerIndex={focusPlayerIndex}

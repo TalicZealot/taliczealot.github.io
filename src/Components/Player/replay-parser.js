@@ -14,11 +14,18 @@ function getManhattanDistance(pointA, pointB) {
 }
 
 function getXpos(val) {
+    if (val == 0) {
+        return 0;
+    }
     let adjusted = val > 100 ? val - 100 : val;
     return (((adjusted - 1) * 15) - 7);
 }
 
 function getYpos(secondCastle, val) {
+    if (val == 0) {
+        return 0;
+    }
+
     if (secondCastle) {
         return ((val * 15) - 170);
     } else {
@@ -45,7 +52,7 @@ function getReplay(data, name) {
     let svgPathData = [];
     let currentIndex = 0;
     let targetIndex = 0;
-    let match = name.match(/([a-zA-Z0-9(]{5,50})([)]){1}([a-zA-Z0-9 -]{0,30})(.sotnr)$/i);
+    let match = name.match(/([a-zA-Z0-9(]{5,50})([-]){1}([a-zA-Z0-9 -]{0,30})(.sotnr)$/i);
     if (match && match.length == 5) {
         username = match[3];
         seed = match[1] + ")";
@@ -54,7 +61,7 @@ function getReplay(data, name) {
     let totalSeconds = bitesToUint16(data[0], data[1]);
 
     currentIndex = 2;
-    targetIndex = 1 + currentIndex + relicBytes;
+    targetIndex = currentIndex + relicBytes;
     for (let i = currentIndex; i < targetIndex; i += 4) {
         let secondCastle = data[i] > 100;
         let x = getXpos(data[i]);
@@ -69,7 +76,7 @@ function getReplay(data, name) {
         });
     }
 
-    targetIndex = 1 + currentIndex + itemBytes;
+    targetIndex = currentIndex + itemBytes;
     for (let i = currentIndex; i < targetIndex; i += 4) {
         let secondCastle = data[i] > 100;
         let x = getXpos(data[i]);
