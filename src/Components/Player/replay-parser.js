@@ -43,19 +43,30 @@ function getReplayData(dataArrays, fileNames) {
     return replays;
 }
 
-function getReplay(data, name) {
+function getReplay(data, fileName) {
     let frames = [];
     let relics = [];
     let items = [];
     let username = '';
     let seed = '';
+    let preset = '';
     let svgPathData = [];
     let currentIndex = 0;
     let targetIndex = 0;
-    let match = name.match(/([a-zA-Z0-9(]{5,50})([-]){1}([a-zA-Z0-9 -]{0,30})(.sotnr)$/i);
-    if (match && match.length == 5) {
+    let name = fileName.replace(".sotnr","");
+
+    let matchPreset = name.match(/(ADVENTURE|BAT-MASTER|CASUAL|EMPTY-HAND|EXPEDITION|GEM-FARMER|GLITCH|GUARDED-OG|LYCANTHROPE|NIMBLE|OG|SAFE|SCAVENGER|SPEEDRUN|THIRD-CASTLE|WARLOCK)/);
+    
+    if (matchPreset) {
+        preset = matchPreset[1];
+    }
+
+    name = name.replace(preset, '');
+    
+    let match = name.match(/([a-zA-Z0-9()]{5,50})([-]){1}([a-zA-Z0-9 -]{0,30})$/i);
+    if (match && match.length == 4) {
         username = match[3];
-        seed = match[1] + ")";
+        seed = match[1] + "(" + preset.toLowerCase() +  ")";
     }
 
     let totalSeconds = bitesToUint16(data[0], data[1]);
