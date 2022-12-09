@@ -8,8 +8,9 @@
   --text-green-dark: #389485;
   --text-green: #51d7c1;
 
-  --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --font-slab: 'Roboto Slab', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
 
   --location-border: #c0c0c0;
   --location-grey: #909090;
@@ -32,7 +33,7 @@ body {
   font-family: var(--font-sans);
   font-style: normal;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
   color: var(--off-white);
   line-height: 1.4rem;
@@ -75,6 +76,7 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: var(--font-slab);
   text-align: center;
   font-weight: bold;
   padding-bottom: 0.6rem;
@@ -426,12 +428,12 @@ h4 {
 }
 
 .slideshow {
-  max-width: 700px;
+  max-width: 630px;
   position: relative;
 }
 
 .photo {
-  max-width: 700px;
+  max-width: 630px;
   position: absolute;
   top: 0;
   left: 0;
