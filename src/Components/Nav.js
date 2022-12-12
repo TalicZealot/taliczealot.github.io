@@ -28,7 +28,7 @@ function Nav() {
       <Link className="nav-button" to="/">
         <img className="logo" src="../Logo.svg"/>
       </Link>
-      <div className="nav-button" onClick={expandProjectsMenu}>Projects</div>
+      <div className="nav-button main-button" onClick={expandProjectsMenu}>Projects</div>
       <CSSTransition
         in={projectsExpanded}
         nodeRef={nodeRef}
@@ -47,7 +47,7 @@ function Nav() {
           <Link className="nav-button sub-button" to="/projects/other">Other</Link>
         </div>
       </CSSTransition>
-      <div className="nav-button" onClick={expandAppsMenu}>Apps</div>
+      <div className="nav-button main-button" onClick={expandAppsMenu}>Apps</div>
       <CSSTransition
         in={appsExpanded}
         nodeRef={nodeRef}
@@ -60,8 +60,8 @@ function Nav() {
           <Link className="nav-button sub-button" to="/apps/replays">Replays</Link>
         </div>
       </CSSTransition>
-      <Link className="nav-button" to="/links">Links</Link>
-      <a className="nav-button" href="https://www.paypal.com/donate?hosted_button_id=5F8565K23F2F8">Donate</a>
+      <Link className="nav-button main-button" to="/links">Links</Link>
+      <a className="nav-button main-button" href="https://www.paypal.com/donate?hosted_button_id=5F8565K23F2F8">Donate</a>
     </nav>
   );
 }

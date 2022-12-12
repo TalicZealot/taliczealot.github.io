@@ -84,7 +84,9 @@
 }
 
 .replay-time {
+    font-family: var(--font-mono);
     padding: 1rem;
+    width: 10rem;
     display: flex;
     justify-content: center;
     color: var(--text-green);
@@ -149,7 +151,7 @@
 .speed-select-panel {
     position: absolute;
     padding: 0.3em;
-    top: -9.6rem;
+    top: -13.8rem;
     background-color: var(--plr-dgrey);
 }
 

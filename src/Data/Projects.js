@@ -19,14 +19,14 @@ var Projects = {
                 The main Api class is not static, because it has to be injected with the Bizhawk Memory api.`
             }
         ],
-        software: ["Visual Studio","Bizhawk","PCSX-R Debugger"]
+        software: ["Visual Studio", "Bizhawk", "PCSX-R Debugger"]
     },
     "sotnrandotools": {
         title: "Symphony of the Night Randomizer Tools",
         technologies: ["C#", "WinForms", "Socket", "Tcp"],
         source: "https://github.com/TalicZealot/SotnRandoTools",
-        description: 
-        `A collection of tools to enhance the Castlevania: Symphony of the Night Randomizer experience. Saves user preferences, window sizes and window positions to a config file.`,
+        description:
+            `A collection of tools to enhance the Castlevania: Symphony of the Night Randomizer experience. Saves user preferences, window sizes and window positions to a config file.`,
         chapters: [
             {
                 title: "Tracker",
@@ -47,7 +47,7 @@ var Projects = {
                 description: `Uses a TCP connection through SuperSimpleTcp to transmit data between two players. Data packets are optimized to 2 bytes. Players can send and receive relics, items, shortcuts and effects.`
             }
         ],
-        software: ["Visual Studio","Visual Studio Code","BizHawk","SotnApi","SuperSimpleTcp"]
+        software: ["Visual Studio", "Visual Studio Code", "BizHawk", "SotnApi", "SuperSimpleTcp"]
     },
     "khaos": {
         title: "SotN Khaos",
@@ -85,21 +85,31 @@ var Projects = {
                 description: `A system for playing without the Twitch interaction. Also useful for testing. The dispatcher will randomly activate actions, but adhere to the cooldown rules.`
             },
         ],
-        software: ["Visual Studio","Visual Studio Code","BizHawk","SotnApi","TwitchLib"]
+        software: ["Visual Studio", "Visual Studio Code", "BizHawk", "SotnApi", "TwitchLib"]
     },
     "replays": {
         title: "SotN Replay Player",
-        technologies: ["React","Javascript", "html5"],
-        source: "https://github.com/TalicZealot/SotN-Replay-Player",
+        technologies: ["React", "Javascript", "html5"],
+        source: "https://github.com/TalicZealot/taliczealot.github.io/tree/main/src/Components/Player",
+        video: "https://www.youtube.com/watch?v=JX3yYf-XWB4",
         description: "A tool that plays back replay files from the Symphony of the Night Randomizer Tools.",
         chapters: [
             {
                 title: "Player",
                 description: `Linearly progresses through the replay files and plays them back on the map display through the KonvaJs SVG library. 
-                Includes controls to Play, Pause, Rewind as well as control the playback speed and a fully functional progress bar.`
+                Includes controls to Play, Pause, Rewind as well as control the playback speed and a fully functional progress bar.
+                The user can select what players are focused. Two players will have trails, the rest only have positional indicators for clarity.`
+            },
+            {
+                title: "Files",
+                description: `Replay data is stored as binary. The player can open parse up to 8 replay files or a zip that contains replays.`
+            },
+            {
+                title: "Tracker",
+                description: `Replays also store data for relics and progression items that are displayes in real time and placed on the map.`
             },
         ],
-        software: ["Visual Studio Code", "Konva"]
+        software: ["Visual Studio Code", "Konva", "jszip"]
     },
     "pathfinder": {
         title: "SotN Pathfinding Tool",
@@ -186,7 +196,7 @@ var Projects = {
                 description: `This project was first implemented with Web Forms before being converted and extended for ASP.`
             },
         ],
-        software: ["Visual Studio","Texstyle"]
+        software: ["Visual Studio", "Texstyle"]
     },
     "trialmode": {
         title: "SotN Trial Mode",
@@ -198,7 +208,7 @@ var Projects = {
     },
     "other": {
         title: "Other Projects",
-        technologies: ["Lua","C#","WPF"],
+        technologies: ["Lua", "C#", "WPF"],
         source: "",
         description: "Other notable open source projects. ",
         chapters: [
@@ -214,5 +224,5 @@ var Projects = {
         software: ["Visual Studio Code", "BizHawk"]
     }
 };
-    
+
 export default Projects;

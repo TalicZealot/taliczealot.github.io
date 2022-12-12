@@ -31,7 +31,7 @@ function Project() {
         }
         {article.video ?
           <div>
-            <span className="article-bold">Video demo: </span><a href={article.video} className="article-source" target="_blank" rel="noreferrer">Youtube</a>
+            <span className="article-bold">Video demo: </span><a href={article.video} className="article-source" target="_blank" rel="noreferrer">{article.video}</a>
           </div>
           :
           null

@@ -47,8 +47,8 @@ let relicImages = [
 ];
 
 function approach(object, point, playbackSpeed) {
-    const MinimumDifference = 0.6;
-    const DifferenceSpeedMultiplier = 0.15;
+    const MinimumDifference = 0.9;
+    const DifferenceSpeedMultiplier = 0.08;
     const SpeedMultiplier = 0.4;
 
     let currentXpos = object.x;
@@ -411,6 +411,8 @@ function Player({ replays }) {
                         <span>{playbackSpeed}x</span>
                         {speedPanel ?
                             <div className="speed-select-panel">
+                                <div className="speed-select-button" onClick={() => { setPlaybackSpeed(5); setSpeedPanel(false); }}>5x</div>
+                                <div className="speed-select-button" onClick={() => { setPlaybackSpeed(4); setSpeedPanel(false); }}>4x</div>
                                 <div className="speed-select-button" onClick={() => { setPlaybackSpeed(3); setSpeedPanel(false); }}>3x</div>
                                 <div className="speed-select-button" onClick={() => { setPlaybackSpeed(2); setSpeedPanel(false); }}>2x</div>
                                 <div className="speed-select-button" onClick={() => { setPlaybackSpeed(1); setSpeedPanel(false); }}>1x</div>
