@@ -58,6 +58,7 @@ function Nav() {
         <div ref={nodeRef}className='nav-list'>
           <Link className="nav-button sub-button" to="/apps/sotnrandotools">SotnRandoTools</Link>
           <Link className="nav-button sub-button" to="/apps/replays">Replays</Link>
+          <Link className="nav-button sub-button" to="/apps/timer">Segmented Timer</Link>
         </div>
       </CSSTransition>
       <Link className="nav-button main-button" to="/links">Links</Link>

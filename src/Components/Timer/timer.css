@@ -1,0 +1,128 @@
+:root {
+    --off-white: rgb(241, 237, 237);
+    --dirty-white: rgb(145, 145, 145);
+    --text-green: #51d7c1;
+    --plr-grey: #242629BB;
+    --plr-lgrey: #3c3d42;
+    --plr-dgrey: #141517;
+}
+
+.timer-panel {
+    padding: 0.4rem;
+    background-color: var(--plr-grey);
+}
+
+.embed-youtube {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    margin-bottom: 1rem;
+}
+
+.embed-youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.total-times {
+    background-color: var(--plr-dgrey);
+    margin-top: 0.3rem;
+}
+
+.total-time {
+    display: flex;
+    justify-content: center;
+    color: var(--text-green);
+    flex-grow: 1;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 0.8rem;
+}
+
+.total-time div {
+    width: 50%;
+    font-family: var(--font-mono);
+    background-color: var(--plr-dgrey);
+    display: inline-block;
+    padding: 0.3rem;
+}
+
+.segment {
+    display: flex;
+    color: var(--text-green);
+    flex-grow: 1;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.segment-time {
+    font-family: var(--font-mono);
+    display: inline-block;
+    padding: 0.3rem;
+    min-width: 13ch;
+}
+
+.segment-button {
+    font-family: var(--font-mono);
+    background-color: var(--plr-dgrey);
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.3rem;
+}
+
+.segment-button:hover {
+    background-color: var(--plr-lgrey);
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.3rem;
+}
+
+.player-controls {
+    padding: 0.5rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.player-yt-button {
+    cursor: pointer;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    color: var(--pastel-green);
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.player-yt-button:hover {
+    background-color: var(--plr-lgrey);
+}
+
+.segment-add {
+    cursor: pointer;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    color: var(--pastel-green);
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.segment-add:hover {
+    background-color: var(--plr-lgrey);
+}
+
+.save-button {
+    display: flex;
+    padding: 0.6rem;
+    cursor: pointer;
+    justify-content: center;
+    margin-top: 0.2rem;
+}

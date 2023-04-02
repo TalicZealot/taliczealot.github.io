@@ -5,6 +5,7 @@ import Links from './Components/Links';
 import { Routes, Route } from "react-router-dom";
 import Application from './Components/Application';
 import ReplayPlayer from './Components/ReplayPlayer';
+import SegmentedTimer from './Components/SegmentedTimer';
 import NotFound from './Components/NotFound';
 
 function App() {
@@ -23,8 +24,8 @@ function App() {
           <Route exact path="/" element={<AboutMe />} />
           <Route path="/projects/:name" element={<Project />} />
           <Route path="/apps/:name" element={<Application />} />
+          <Route path="/apps/timer" element={<SegmentedTimer />} />
           <Route path="/apps/replays" element={<ReplayPlayer />} />
-          <Route path="/apps/pathfinder" />
           <Route path="/links" element={<Links />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

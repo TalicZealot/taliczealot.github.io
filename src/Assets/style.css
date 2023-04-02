@@ -84,6 +84,22 @@ h4 {
   margin-bottom: 0.4rem;
 }
 
+input {
+  border: 2px solid;
+  border-color: var(--dirty-white);
+  background-color: var(--cogs-blue);
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center;
+  color: var(--off-white);
+  line-height: 2.4rem;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   height: 100%;
 }
@@ -464,6 +480,18 @@ h4 {
   animation-delay: 9s;
 }
 
+.yt-url-panel {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--plr-grey);
+    width: 70vw;
+    height: 80vh;
+    justify-content: center;
+    position: relative;
+    line-height: 3;
+}
+
 .tracker {
   width: 246px;
   height: 440px;
@@ -500,6 +528,10 @@ h4 {
   height: 20px;
   border: solid var(--location-border) 4px;
   display: inline-block;
+}
+
+.player-controls {
+  display: flex;
 }
 
 .links-panel {

@@ -50,18 +50,7 @@ function Project() {
           ))}
         </ul>
       </div>
-      <div className="sidebar">
-        <ul>
-          {article.chapters.map(chapter => (
-            <li key={chapter.title}>
-              <a key={chapter.title} href={"#" + chapter.title}>{chapter.title}</a>
-            </li>
-          ))}
-          <li key="Software-Used-Link" >
-            <a key="Software-Used-Link" href="#Software-Used">Software Used</a>
-          </li>
-        </ul>
-      </div>
+
     </div>
   );
 }

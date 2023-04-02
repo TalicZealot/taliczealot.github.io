@@ -79,15 +79,6 @@ function Application() {
           null
         }
       </div>
-      <div className="sidebar">
-        <ul>
-          {application.chapters.map(chapter => (
-            <li key={chapter.title}>
-              <a key={chapter.title} href={"#" + chapter.title}>{chapter.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }
