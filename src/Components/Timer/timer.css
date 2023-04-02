@@ -63,6 +63,10 @@
     margin-bottom: 0.2rem;
 }
 
+.segment div, input {
+    width: 25%;
+}
+
 .segment-time {
     font-family: var(--font-mono);
     display: inline-block;
@@ -119,10 +123,37 @@
     background-color: var(--plr-lgrey);
 }
 
+.save-box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 .save-button {
+    border: 2px solid var(--dirty-white);
     display: flex;
     padding: 0.6rem;
     cursor: pointer;
     justify-content: center;
-    margin-top: 0.2rem;
+    margin-top:  0.5rem;
+    margin-bottom:  0.5rem;
+    align-items: center;
 }
+
+.save-button:hover {
+    background-color: var(--plr-lgrey);
+}
+
+.segment-name {
+    border: 2px solid var(--dirty-white);
+    background-color: var(--cogs-blue);
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 0 0 0.3rem;
+    text-align: left;
+    color: var(--text-green);
+    line-height: 1.4rem;
+  }

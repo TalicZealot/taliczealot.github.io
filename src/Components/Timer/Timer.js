@@ -15,31 +15,48 @@ function Timer({ videoId }) {
     const [player, setPlayer] = useState();
     const [realTime, setRealTime] = useState(0);
     const [segmentTime, setSegmentTime] = useState(0);
-    const [segments, setSegments] = useState(Array(1).fill({ start: 0, end: 0, time: 0 }));
+    const [segments, setSegments] = useState(Array(1).fill({ name: "segment 1", start: 0, end: 0, time: 0 }));
 
     const initializePlayer = (e) => {
         setPlayer(e.target);
     };
 
     const addSegment = () => {
-        setSegments(segments => [...segments, { start: 0, end: 0, time: 0 }]);
+        const newName = "segment " + (segments.length + 1);
+        const newSegment = { name: newName, start: 0, end: 0, time: 0 };
+        setSegments(segments => [...segments, newSegment]);
+    }
+
+    const setSegmentName = (index, name) => {
+        const newSegments = [...segments];
+        newSegments[index].name = name;
+        setSegments(newSegments);
     }
 
     const setSegmentStart = (index) => {
+        const currentTime = player.getCurrentTime();
+        if ((index > 0 && segments[index - 1].end >= currentTime) || (segments[index].start > 0 && currentTime >= segments[index].end)) {
+            return;
+        }
         const newSegments = [...segments];
         newSegments[index].start = player.getCurrentTime();
-        console.log(newSegments[index].start);
         setSegments(newSegments);
     }
 
     const setSegmentEnd = (index) => {
+        const currentTime = player.getCurrentTime();
+        if (segments[index].start >= currentTime) {
+            return;
+        }
         const newSegments = [...segments];
-        newSegments[index].end = player.getCurrentTime();
+        newSegments[index].end = currentTime;
         newSegments[index].time = newSegments[index].end - newSegments[index].start;
         setSegments(newSegments);
         getRealTime();
         getTotalSegmentTime();
-        addSegment();
+        if (index == segments.length - 1) {
+            addSegment();
+        }
     }
 
     const getRealTime = () => {
@@ -65,14 +82,14 @@ function Timer({ videoId }) {
         let data = [];
         for (let i = 0; i < segments.length - 1; i++) {
             let entry = {};
-            entry.name = "segment " + i + 1;
+            entry.name = segments[i].name;
             entry.start = toTimeString(segments[i].start);
             entry.end = toTimeString(segments[i].end);
             entry.time = toTimeString(segments[i].time);
             data.push(entry);
         }
-        data.push({name: "Real Time", time: toTimeString(realTime)});
-        data.push({name: "Segments Total Time", time: toTimeString(segmentTime)});
+        data.push({ name: "Real Time", time: toTimeString(realTime) });
+        data.push({ name: "Segments Total Time", time: toTimeString(segmentTime) });
 
         return data;
     }
@@ -99,14 +116,15 @@ function Timer({ videoId }) {
                 />
             </div>
             <div className="segments">
-                <h4>Segments</h4>
                 <div className="segment">
+                    <div className="segment-time" >name</div>
                     <div className="segment-time" >start</div>
                     <div className="segment-time" >end</div>
                     <div className="segment-time">time</div>
                 </div>
                 {segments.map((segment, index) => (
                     <div className="segment" key={index.toString()}>
+                        <input className="segment-name" type="text" minLength="20" maxLength="20" value={segment.name} onChange={(e) => setSegmentName(index, e.target.value)}/>
                         <div className="segment-button" onClick={() => setSegmentStart(index)}>{toTimeString(segment.start)}</div>
                         <div className="segment-button" onClick={() => setSegmentEnd(index)}>{toTimeString(segment.end)}</div>
                         <div className="segment-time">{toTimeString(segment.time)}</div>
@@ -122,7 +140,13 @@ function Timer({ videoId }) {
                     <div>Segments Total Time:</div>
                     <div className="segment-time">{toTimeString(segmentTime)}</div>
                 </div>
-                <div className="save-button" onClick={() => exportToCSV()}>Save Spreadsheet</div>
+                {segmentTime > 0 ?
+                    <div  className="save-box">
+                        <div className="save-button" onClick={() => exportToCSV()}>Save Spreadsheet</div>
+                    </div>
+                    :
+                    <div></div>
+                }
             </div>
         </div>
     );
