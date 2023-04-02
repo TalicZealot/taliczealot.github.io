@@ -12,6 +12,8 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 
 /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
+/*! sheetjs (C) 2013-present SheetJS -- http://sheetjs.com */
+
 /**
  * @license React
  * react-dom.production.min.js
@@ -104,3 +106,8 @@ https://github.com/nodeca/pako/blob/main/LICENSE
  *
  * @license MIT
  */
+
+/**
+* @link https://github.com/gajus/sister for the canonical source repository
+* @license https://github.com/gajus/sister/blob/master/LICENSE BSD 3-Clause
+*/
