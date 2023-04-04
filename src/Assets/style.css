@@ -100,6 +100,11 @@ input {
   padding: 0;
 }
 
+ol li {
+  list-style-position: inside;
+  padding: 0.2rem 1.4rem 0.2rem 1.4rem;
+}
+
 #root {
   height: 100%;
 }
@@ -528,6 +533,19 @@ input {
   height: 20px;
   border: solid var(--location-border) 4px;
   display: inline-block;
+}
+
+.timerHelpButton {
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  width: 30%;
+}
+
+.timerHelpButton:hover {
+  background-color: var(--background-blue);
 }
 
 .player-controls {

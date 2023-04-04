@@ -10,6 +10,8 @@
 .timer-panel {
     padding: 0.4rem;
     background-color: var(--plr-grey);
+    min-width: 1000px;
+    width: 70vw;
 }
 
 .embed-youtube {
