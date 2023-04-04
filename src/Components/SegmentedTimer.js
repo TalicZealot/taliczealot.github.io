@@ -8,10 +8,10 @@ function SegmentedTimer() {
     const [help, setHelp] = useState(false);
 
     const getVideoId = (url) => {
-        const regex = /\?v=\S{11}/g;
-        const match = url.match(regex)
+        const regex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+        const match = url.match(regex);
         if (match) {
-            setVideoId(match[0].split("?v=")[1]);
+            setVideoId(match[7]);
             setVideoUrl(url);
             setSubmitted(true);
         } else {
