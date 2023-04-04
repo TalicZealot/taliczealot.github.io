@@ -35,7 +35,7 @@ function Timer({ videoId }) {
 
     const setSegmentStart = (index) => {
         const currentTime = player.getCurrentTime();
-        if ((index > 0 && segments[index - 1].end >= currentTime) || (segments[index].start > 0 && currentTime >= segments[index].end)) {
+        if ((index > 0 && segments[index - 1].end >= currentTime) || (segments[index].start > 0 && segments[index].end > 0 && currentTime >= segments[index].end)) {
             return;
         }
         const newSegments = [...segments];
