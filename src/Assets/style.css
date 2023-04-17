@@ -489,7 +489,6 @@ ol li {
   display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--plr-grey);
     height: 80vh;
     justify-content: center;
     position: relative;
@@ -545,6 +544,25 @@ ol li {
 
 .timerHelpButton:hover {
   background-color: var(--background-blue);
+}
+
+.timerStartButton {
+  cursor: pointer;
+  background-color: var(--background-blue);
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  color: var(--off-white);
+  line-height: 2.4rem;
+  margin: 1em;
+  padding: 0.2em 1em 0.2em 1em;
+}
+
+.timerStartButton:hover {
+  background-color: var(--cogs-blue);
 }
 
 .player-controls {

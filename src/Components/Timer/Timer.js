@@ -6,12 +6,13 @@ import * as XLSX from 'xlsx';
 import './timer.css';
 
 function toTimeString(totalSeconds) {
+    console.log(totalSeconds);
     const totalMs = totalSeconds * 1000;
     const result = new Date(totalMs).toISOString().slice(11, 23);
     return result;
 }
 
-function Timer({ videoId }) {
+function Timer({ videoId, framerate }) {
     const [player, setPlayer] = useState();
     const [realTime, setRealTime] = useState(0);
     const [segmentTime, setSegmentTime] = useState(0);
@@ -33,18 +34,28 @@ function Timer({ videoId }) {
         setSegments(newSegments);
     }
 
-    const setSegmentStart = (index) => {
+    const getAdjustedTime = () => {
+        const frameTime = 1 / framerate;
         const currentTime = player.getCurrentTime();
+        const remainder = currentTime - Math.floor(currentTime);
+        const frames = Math.round(remainder / frameTime);
+        const adjustedRemainder = frames * frameTime;
+        const adjustedTime = Math.floor(currentTime) + adjustedRemainder;
+        return adjustedTime;
+    }
+
+    const setSegmentStart = (index) => {
+        const currentTime = getAdjustedTime();
         if ((index > 0 && segments[index - 1].end >= currentTime) || (segments[index].start > 0 && segments[index].end > 0 && currentTime >= segments[index].end)) {
             return;
         }
         const newSegments = [...segments];
-        newSegments[index].start = player.getCurrentTime();
+        newSegments[index].start = currentTime;
         setSegments(newSegments);
     }
 
     const setSegmentEnd = (index) => {
-        const currentTime = player.getCurrentTime();
+        const currentTime = getAdjustedTime();
         if (segments[index].start >= currentTime) {
             return;
         }
@@ -153,7 +164,8 @@ function Timer({ videoId }) {
 }
 
 Timer.propTypes = {
-    videoId: PropTypes.string
+    videoId: PropTypes.string,
+    framerate: PropTypes.number
 }
 
 export default Timer;
