@@ -6,7 +6,6 @@ import * as XLSX from 'xlsx';
 import './timer.css';
 
 function toTimeString(totalSeconds) {
-    console.log(totalSeconds);
     const totalMs = totalSeconds * 1000;
     const result = new Date(totalMs).toISOString().slice(11, 23);
     return result;
@@ -63,15 +62,11 @@ function Timer({ videoId, framerate }) {
         newSegments[index].end = currentTime;
         newSegments[index].time = newSegments[index].end - newSegments[index].start;
         setSegments(newSegments);
-        getRealTime();
+        setRealTime(segments[segments.length - 1].end - segments[0].start);
         getTotalSegmentTime();
         if (index == segments.length - 1) {
             addSegment();
         }
-    }
-
-    const getRealTime = () => {
-        setRealTime(segments[segments.length - 1].end - segments[0].start);
     }
 
     const getTotalSegmentTime = () => {
@@ -135,7 +130,7 @@ function Timer({ videoId, framerate }) {
                 </div>
                 {segments.map((segment, index) => (
                     <div className="segment" key={index.toString()}>
-                        <input className="segment-name" type="text" minLength="20" maxLength="20" value={segment.name} onChange={(e) => setSegmentName(index, e.target.value)}/>
+                        <input className="segment-name" type="text" minLength="20" maxLength="20" value={segment.name} onChange={(e) => setSegmentName(index, e.target.value)} />
                         <div className="segment-button" onClick={() => setSegmentStart(index)}>{toTimeString(segment.start)}</div>
                         <div className="segment-button" onClick={() => setSegmentEnd(index)}>{toTimeString(segment.end)}</div>
                         <div className="segment-time">{toTimeString(segment.time)}</div>
@@ -152,7 +147,7 @@ function Timer({ videoId, framerate }) {
                     <div className="segment-time">{toTimeString(segmentTime)}</div>
                 </div>
                 {segmentTime > 0 ?
-                    <div  className="save-box">
+                    <div className="save-box">
                         <div className="save-button" onClick={() => exportToCSV()}>Save Spreadsheet</div>
                     </div>
                     :

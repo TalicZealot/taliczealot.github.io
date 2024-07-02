@@ -37,12 +37,12 @@ function Project() {
           null
         }
         <div className="article-description">{article.description}</div>
-        {article.chapters.map(chapter => (
-          <div key={chapter.title} className="article-chapter" >
-            <h3 id={chapter.title}>{chapter.title}</h3>
-            <div>{chapter.description}</div>
-          </div>
-        ))}
+          {article.chapters.map(chapter => (
+            <div key={chapter.title} className="article-chapter" >
+              <h3 id={chapter.title}>{chapter.title}</h3>
+              <div>{chapter.description}</div>
+            </div>
+          ))}
         <h3 id="Software-Used">Software Used</h3>
         <ul className="software-list">
           {article.software.map(software => (

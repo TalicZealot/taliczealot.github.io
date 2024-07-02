@@ -141,7 +141,6 @@ function getRelicCoordinates(replays) {
     for (let i = 1; i < replays.length; i++) {
         let nextSet = replays[i].relics;
         nextSet = nextSet.concat(replays[i].items);
-
         for (let j = 0; j < combinedSet.length; j++) {
             if (combinedSet[j].x == 0) {
                 combinedSet[j] = nextSet[j];

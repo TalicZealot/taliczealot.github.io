@@ -41,9 +41,10 @@ function Nav() {
           <Link className="nav-button sub-button" to="/projects/khaos">Khaos</Link>
           <Link className="nav-button sub-button" to="/projects/racebot">Race Bot</Link>
           <Link className="nav-button sub-button" to="/projects/replays">Replays</Link>
+          <Link className="nav-button sub-button" to="/projects/segmenttimer">Segment Timer</Link>
+          <Link className="nav-button sub-button" to="/projects/wiki">FrontlsideWiki</Link>
           <Link className="nav-button sub-button" to="/projects/pathfinder">Pathfinder</Link>
           <Link className="nav-button sub-button" to="/projects/sotnapi">SotnApi</Link>
-          <Link className="nav-button sub-button" to="/projects/wiki">FrontlsideWiki</Link>
           <Link className="nav-button sub-button" to="/projects/other">Other</Link>
         </div>
       </CSSTransition>
@@ -62,7 +63,6 @@ function Nav() {
         </div>
       </CSSTransition>
       <Link className="nav-button main-button" to="/links">Links</Link>
-      <a className="nav-button main-button" href="https://www.paypal.com/donate?hosted_button_id=5F8565K23F2F8">Donate</a>
     </nav>
   );
 }

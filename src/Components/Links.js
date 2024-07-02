@@ -44,6 +44,11 @@ function Links() {
               SotN Randomizer
             </a>
           </li>
+          <li>
+            <a href="https://github.com/Xeeynamo/sotn-decomp">
+              SotN Decomp Project
+            </a>
+          </li>
         </ul>
       </p>
     </div>

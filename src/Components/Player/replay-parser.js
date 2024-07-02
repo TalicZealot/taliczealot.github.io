@@ -216,9 +216,11 @@ async function parseFiles(files) {
                 reader.onload = function (e) {
                     let replayArray = new Uint8Array(e.target.result);
                     dataArrays.push(replayArray);
+                    reader.abort();
                     resolve();
                 };
                 reader.onerror = function (e) {
+                    reader.abort();
                     reject('Error : ' + e.type);
                 };
                 reader.readAsArrayBuffer(file);

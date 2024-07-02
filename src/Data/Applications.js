@@ -48,20 +48,19 @@ var Applications = {
             },
             {
                 title: "Autosplitter",
-                description: "The autotracker will also automatically start, restart and split when Dracula dies if you have LiveSplit running when you start the tools.",
+                description: "Automatically start, restart and split when Dracula dies if you have LiveSplit running when you start the tools.",
                 subchapters: []
             },
             {
                 title: "Co-Op",
-                description: "Coop requires the host to have the port they want to use forwarded. Hosting automatically copies your address(ip:port) to the clipboard. The other player uses that address to connect. Please be careful to not leak your IP!",
+                description: "Allows two players to connect over the internet and share relics, shortcuts and send items to each other. Use a virtual network to connect.",
                 subchapters: [
                     {
                         title: "Bindings",
                         description: "",
                         list: [
-                            "R3(in equipment menu):     Send highlighted item",
-                            "Circle(in equipment menu): Use highlighted item for the other player",
-                            "select(in relics menu):    Send all warps and shortcuts"
+                            "Select(in equipment menu):     Send highlighted item",
+                            "Select(in relics menu):    Send all warps and shortcuts"
                         ]
                     }
                 ]

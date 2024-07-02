@@ -49,7 +49,7 @@ function SegmentedTimer() {
             {!submitted
                 ? <div className="yt-url-panel">
                     <input type="text" minLength="40" maxLength="50" size="44" placeholder="Youtube video URL" value={videoUrl} onChange={(e) => getVideoId(e.target.value)} />
-                    <input type="text" minLength="2" maxLength="3" size="3" placeholder="framerate" value={framerate} onChange={(e) => editFramerate(e.target.value)} />
+                    <input type="text" minLength="2" maxLength="6" size="3" placeholder="framerate" value={framerate} onChange={(e) => editFramerate(e.target.value)} />
                     <div className="timerStartButton" onClick={() => startTiming()}>Start Timing</div>
                 </div>
                 : <Timer videoId={videoId} framerate={parseFloat(framerate)} />

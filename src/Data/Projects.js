@@ -23,16 +23,16 @@ var Projects = {
     },
     "sotnrandotools": {
         title: "Symphony of the Night Randomizer Tools",
-        technologies: ["C#", "WinForms", "Socket", "Tcp"],
+        technologies: ["C#", "WinForms", "WebSocket", "Tcp", "OpenGL", "OpenAL"],
         source: "https://github.com/TalicZealot/SotnRandoTools",
         description:
             `A collection of tools to enhance the Castlevania: Symphony of the Night Randomizer experience. Saves user preferences, window sizes and window positions to a config file.`,
         chapters: [
             {
                 title: "Tracker",
-                description: `Automatically detects and displays important in-game items on a dedicated window with a GDI canvas.
+                description: `Automatically detects and displays important in-game items on a dedicated window through an OpenGL renderer.
                  Scales icons using nearest-neighbor according to window size. 
-                 Optionally the user can choose to turn on a socket server that enables them to use the local html/js widget that comes with the app in OBS instead of capturing the window.`
+                 Optionally the user can choose to turn on a WebSocket server that enables them to use the local html/js widget that comes with the app in OBS instead of capturing the window.`
             },
             {
                 title: "Autosplitter",
@@ -44,14 +44,14 @@ var Projects = {
             },
             {
                 title: "Co-Op",
-                description: `Uses a TCP connection through SuperSimpleTcp to transmit data between two players. Data packets are optimized to 2 bytes. Players can send and receive relics, items, shortcuts and effects.`
+                description: `Uses a client/server TCP connection to transmit data between two players. Players can send and receive relics, items, shortcuts and effects.`
             }
         ],
-        software: ["Visual Studio", "Visual Studio Code", "BizHawk", "SotnApi", "SuperSimpleTcp"]
+        software: ["Visual Studio", "Visual Studio Code", "BizHawk", "OpenTK", "SotnApi"]
     },
     "khaos": {
         title: "SotN Khaos",
-        technologies: ["C#", "WinForms", "Socket"],
+        technologies: ["C#", "WinForms", "WebSocket"],
         source: "https://github.com/TalicZealot/SotnKhaosTools",
         description: `A tool for Twitch chat interaction while playin the Castlevania:Symphony of the Night Randomizer. Designed with experienced SotN speedrunners in mind.
          Meant to both present challenging situations and fun moments atypical of standard play.`,
@@ -115,23 +115,15 @@ var Projects = {
         title: "SotN Pathfinding Tool",
         technologies: ["Javascript", "html5", "KonvaJs"],
         source: "https://github.com/TalicZealot/SotN-Pathfinding",
-        description: "A tool that finds the shortest path between two rooms from the map.",
+        description: "A tool that finds the shortest path between two rooms from the map. Used this as a fun playground for learning graph problems.",
         chapters: [
             {
                 title: "Map Parser",
-                description: `A tool that parses the F_MAP binary file and outputs an adjacency matrix.`
-            },
-            {
-                title: "Relic Selector",
-                description: `The user can select relic options that can open additional paths on the map.`
-            },
-            {
-                title: "Priority Queue",
-                description: `Implemented manually with a heap data structure.`
+                description: `A tool that parses the F_MAP binary file and outputs an adjacency map for each room in a grid and custom connections.`
             },
             {
                 title: "Shortest Path",
-                description: `Finds the shortest path between the two selected rooms through an implementation fo the A Star algorithm.`
+                description: `Finds the shortest distance path between the two selected rooms using the provided requirements. Implemented with the A* algorithm and a custom priority queue (D-ary heap with a hash map and a secondary priority).`
             },
             {
                 title: "Display",
@@ -205,6 +197,31 @@ var Projects = {
         description: "A Lua script that uses the Lua Api of Bizhawk to make a Trial system. Giving challenges to the player and being able to detect success or failure. ",
         chapters: [],
         software: ["Visual Studio Code", "BizHawk"]
+    },
+    "segmenttimer": {
+        title: "Segmented Timer for Youtube Videos",
+        technologies: ["React", "Javascript", "html5"],
+        source: "https://github.com/TalicZealot/taliczealot.github.io/blob/main/src/Components/Timer/Timer.js",
+        description: "A tool that streamlines the process of timing segments of videos on youtube.",
+        chapters: [
+            {
+                title: "Player",
+                description: `Uses youtube's embedded player and API, which gives users access to hotkeys for per-frame control of the video. Unfortunately this player doesn't provide API for those specific functions, nor does it integrate UI controls for them.`
+            },
+            {
+                title: "Segment Timing",
+                description: `The api gives us access to the current time of the video with millisecond precision. The start and end frame is selected by the user and times are calculated.`
+            },
+            {
+                title: "Complications",
+                description: `Originally the idea was to use that and provide timing for the segments accurate to the frame. Unfortunately it turned out that the API does not return properly calculated times with the video's framerate, but uses the cursor's position and it rounds. Additionally the framerate displayed in the stats display is rouded. Due to these issues a separate field was added where the user inputs the video's frame rate and an approximation is made for what frame the cursor is actually on. While the resulting timing should be quite accurate, there is no way to know the true frame rate of the video. After reporting the issue in Google's tracker it was confirmed that this will not be fixed.`
+            },
+            {
+                title: "Export to Spreadsheet",
+                description: `The segments can be formatted, serialized and exported to an XLSX spreadsheet file via the XLSX library.`
+            },
+        ],
+        software: ["Visual Studio Code", "YouTube API", "XLSX"]
     },
     "other": {
         title: "Other Projects",

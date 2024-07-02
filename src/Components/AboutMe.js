@@ -1,7 +1,3 @@
-import cat1 from '../Assets/cat/cat1.jpg';
-import cat2 from '../Assets/cat/cat2.jpg';
-import cat3 from '../Assets/cat/cat3.jpg';
-
 function AboutMe() {
   return (
     <div className="about">
@@ -21,21 +17,19 @@ function AboutMe() {
         <p className="about-chapter">My hobbies include playing electric guitar, speedrunning and commentary.</p>
       </div>
       <div className="about-chapter">
-        <span>Technologies I&apos;ve used for projects recently:</span>
+        <span>Languages and technologies I&apos;ve used for hobby projects recently:</span>
         <ul className="about-list">
           <li>C#</li>
-          <li>Node.js</li>
           <li>Javascript</li>
-          <li>React</li>
+          <li>Go</li>
+          <li>C++</li>
         </ul>
-      </div>
-      <div className="about-chapter">
-        <h1>Cat</h1>
-        <div className="slideshow">
-          <img className="photo" src={cat1} />
-          <img className="photo" src={cat2} />
-          <img className="photo" src={cat3} />
-        </div>
+        <ul className="about-list">
+          <li>Node.js</li>
+          <li>React</li>
+          <li>OpenGL</li>
+          <li>OpenAL</li>
+        </ul>
       </div>
     </div>
   );
