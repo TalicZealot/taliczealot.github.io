@@ -32,7 +32,7 @@ html,
 body {
   font-family: var(--font-sans);
   font-style: normal;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   text-decoration: none;
   color: var(--off-white);
@@ -43,6 +43,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-blue);
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 .not-found {
@@ -166,7 +170,7 @@ ol li {
 }
 
 .nav {
-  padding: 2rem;
+  padding: 1rem;
   line-height: 2;
   text-align: left;
   display: flex;
@@ -198,7 +202,7 @@ ol li {
 
 @media screen and (max-width: 500px) {
   .nav {
-    gap: 0.5rem;
+    gap: 1rem;
     flex-direction: row;
     position: static;
     font-size: 1rem;
@@ -264,8 +268,10 @@ ol li {
   color: var(--text-green-dark);
 }
 
-.main-button {
-  min-width: 7em;
+@media screen and (min-width: 501px) {
+  .main-button {
+    min-width: 7em;
+  }
 }
 
 .content {
@@ -306,14 +312,12 @@ ol li {
 .about-intro {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  max-width: 700px;
-  padding: 1rem;
+  max-width: 800px;
   gap: 2rem;
 }
 
 .about-intro div {
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .about-intro p {
@@ -321,17 +325,17 @@ ol li {
 }
 
 .about-chapter {
+  margin-top: 1em;
   justify-content: center;
-  max-width: 700px;
-  padding: 1rem;
+  max-width: 800px;
 }
 
 .about-photo {
   background-image: url('../Assets/photo.png');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 320px;
   opacity: 0.7;
   box-shadow: 0 0 8px 8px var(--background-blue) inset;
 }
@@ -342,10 +346,8 @@ ol li {
 
 .article {
   text-align: left;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-bottom: 3rem;
-  max-width: 700px;
+  padding-bottom: 1rem;
+  max-width: 800px;
 }
 
 .article-bold {
@@ -375,8 +377,22 @@ ol li {
 .article-subchapter {
   padding-top: 1rem;
   display: flex;
-  flex-direction: row;
   gap: 0.5rem;
+}
+
+@media screen and (min-width: 501px) {
+  .article-subchapter {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .article-subchapter{
+    flex-direction: column;
+  }
+  .about-photo {
+    display: none;
+  }
 }
 
 .sidebar {
@@ -564,6 +580,19 @@ ol li {
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+
+@media screen and (min-width: 501px) {
+  .links-panel {
+    width: 800px;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .links-panel {
+    flex-direction: column;
+  }
 }
 
 .link-list {
